@@ -36,14 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     document.getElementById('idezet').addEventListener('click', () => {
+        document.getElementById('idezetek').textContent=" ";
         osszadatBetoltes();
         kiir(lista);
      
     });
 
-    document.getElementById('the').addEventListener('click', () => {
+    document.getElementById('thegomb').addEventListener('click', () => {
         osszadatBetoltes();
-      
+        document.getElementById('the').textContent=" ";
+        let theLista = document.getElementById('the');
+        for (let i = 0; i < lista.length; i++) {
+           
+           if (lista[i].quote.includes("The ") || lista[i].quote.includes(" the ")){
+            let li = document.createElement('li');
+            li.textContent= lista[i].quote;
+            theLista.appendChild(li);
+            
+           }
+        
+    
+                
+
+
+            
+         }
     
     
      
@@ -51,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('hossz').addEventListener('click', () => {
         osszadatBetoltes();
+        document.getElementById('szoveg').textContent=" ";
         let hosszLista = document.getElementById('szoveg');
     for (let i = 0; i < lista.length; i++) {
        let p = document.createElement('p');
